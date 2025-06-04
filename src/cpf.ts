@@ -3,6 +3,9 @@ export function calculateCheckDigit(
   cpfPart: string,
   startingMultiplier: number,
 ): number {
+  // Retorna se não conter apenas dígitos
+  if (!/^\d+$/.test(cpfPart)) return 0;
+
   let total = 0;
   for (let i = 0; i < cpfPart.length; i++) {
     total += parseInt(cpfPart[i], 10) * (startingMultiplier - i);

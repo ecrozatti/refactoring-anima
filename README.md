@@ -1,6 +1,6 @@
 # 🧮 Validador de CPF (TypeScript)
 
-Este projeto implementa/refatora uma função de validação de CPF em TypeScript, utilizando boas práticas de desenvolvimento, testes automatizados com Jest e ferramentas de qualidade como ESLint e Prettier. (teste para vaga interna)
+Projeto desenvolvido como teste para uma vaga interna, com o objetivo de implementar e refatorar uma função de validação de CPF em TypeScript, aplicando boas práticas de desenvolvimento, testes automatizados com Jest e ferramentas de qualidade como ESLint e Prettier.
 
 ---
 
@@ -26,7 +26,7 @@ npm test
 
 ### 3. Rode via terminal
 
-Valide no terminal executando o comando abaixo comF como parâmetro:
+Execute o comando abaixo com um CPF como parâmetro:
 ```bash
 npm run dev 639.725.330-98
 ```
@@ -39,6 +39,12 @@ Os testes foram escritos com **Jest**, seguindo a abordagem **BDD (Behavior-Driv
 
 ### Exemplos de cenários testados:
 
+**calculateCheckDigit**
+- ✅ Deve calcular corretamente o primeiro dígito verificador
+- ✅ Deve calcular corretamente o segundo dígito verificador
+- ✅ Deve retornar `zero` caso a base numérica seja inválida ou incompleta
+
+**validateCPF**
 - ✅ CPF válido → deve retornar `true`
 - ❌ CPF com dígitos verificadores errados → deve retornar `false`
 - ❌ CPF com todos os dígitos iguais → deve retornar `false`
@@ -53,7 +59,7 @@ Os testes foram escritos com **Jest**, seguindo a abordagem **BDD (Behavior-Driv
 |--------|-----------|
 | **SRP (Single Responsibility Principle)** | A função `validateCPF` faz apenas a validação, seguindo o princípio da responsabilidade única. |
 | **Early return** | Torna o código mais limpo, evitando indentação desnecessária. |
-| **Função auxiliar interna** | `calculateCheckDigit` evita repetição de lógica para o cálculo dos dígitos verificadores. |
+| **Função modularizada** | `calculateCheckDigit` está separada para evitar repetição e facilitar testes isolados. |
 | **Regex** | Usado para limpar a entrada (remover `.`, `-`, espaços) e identificar CPFs inválidos com todos os dígitos iguais. |
 | **Testes automatizados** | Garantem segurança ao código e facilitam manutenção. |
 | **Lint e Prettier** | Garantem padronização e legibilidade do código. |

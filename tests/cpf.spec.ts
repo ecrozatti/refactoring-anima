@@ -2,14 +2,14 @@ import { calculateCheckDigit, validateCPF } from '../src/cpf';
 
 describe('REFACTORING-ANIMA', () => {
   describe('calculateCheckDigit', () => {
-    it('should correctly calculate the first check digit for known input', () => {
-      const cpfPart = '111444777'; // os 9 primeiros dígitos
+    it('should calculate the first check digit correctly for a known input', () => {
+      const cpfPart = '111444777';
       const multiplier = 10;
       const digit = calculateCheckDigit(cpfPart, multiplier);
       expect(digit).toBe(3); // Esperado 111.444.777-35
     });
 
-    it('should correctly calculate the second check digit for known input', () => {
+    it('should calculate the second check digit correctly for a known input', () => {
       const cpfPart = '1114447773';
       const multiplier = 11;
       const digit = calculateCheckDigit(cpfPart, multiplier);
@@ -18,6 +18,13 @@ describe('REFACTORING-ANIMA', () => {
 
     it('should return 0 when the rest is less than 2', () => {
       const cpfPart = '000000000';
+      const multiplier = 10;
+      const digit = calculateCheckDigit(cpfPart, multiplier);
+      expect(digit).toBe(0);
+    });
+
+    it('should return 0 or handle invalid input gracefully', () => {
+      const cpfPart = 'ABC';
       const multiplier = 10;
       const digit = calculateCheckDigit(cpfPart, multiplier);
       expect(digit).toBe(0);
@@ -31,7 +38,7 @@ describe('REFACTORING-ANIMA', () => {
       expect(result).toBe(true); // THEN
     });
 
-    it('should return false for a CPF with wrong check digits', () => {
+    it('should return false for a CPF with incorrect check digits', () => {
       const cpf = '111.444.777-00';
       const result = validateCPF(cpf);
       expect(result).toBe(false);
