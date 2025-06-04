@@ -115,7 +115,7 @@ Os testes foram escritos com **Jest**, seguindo a abordagem **BDD (Behavior-Driv
 ## 🎯 Resultados obtidos
 
 - Rodando via terminal com alguns CPFs:
-![alt text](./utils/run.png)
+![alt text](./assets/run.png)
 
 - Rodando os testes:
-![alt text](./utils/tests.png)
+![alt text](./assets/tests.png)
