@@ -2,6 +2,8 @@
 
 Projeto desenvolvido como teste para uma vaga interna, com o objetivo de implementar e refatorar uma função de validação de CPF em TypeScript, aplicando boas práticas de desenvolvimento, testes automatizados com Jest e ferramentas de qualidade como ESLint e Prettier.
 
+Obs.: adicionei alguns comentários explicativos no código só para facilitar o entendimento da lógica durante a avaliação. Costumo manter o código mais limpo em projetos reais, mas achei válido nesse contexto.
+
 ---
 
 ## ✅ Requisitos validados
